@@ -2,12 +2,13 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 permissions:
   contents: read
+  id-token: write   # required for npm provenance on publish
 
 jobs:
   # Run Node-only unit tests across supported runtime versions.

@@ -1,6 +1,6 @@
 # cypress-perf-baseline
 
-[![CI](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/ci.yml/badge.svg)](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/ci.yml)
+[![CI](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/ci.yml)
 
 > Measure performance in Cypress tests, keep a baseline in git, and catch regressions in CI.
 
