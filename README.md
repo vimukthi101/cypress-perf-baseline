@@ -319,18 +319,6 @@ This repository includes `.github/workflows/tests.yml` with two jobs:
 
 The integration job uploads `cypress/integration-reports/perf-report.html` as an artifact.
 
-## Cypress plugin-list readiness
-
-If you want to list this package on the official Cypress plugins page, this repo already includes the expected basics:
-
-- clear purpose + setup docs in `README.md`
-- integration tests with Cypress in `cypress/e2e/perf.cy.js`
-- CI pipeline in `.github/workflows/tests.yml`
-- populated package metadata in `package.json` (`homepage`, `repository`, `bugs`, keywords)
-
-After publishing to npm, you can submit a PR to the Cypress docs repo and add an entry to `src/data/plugins.json`.
-
----
 
 ## License
 
