@@ -1,6 +1,6 @@
 # cypress-perf-baseline
 
-[![CI](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/ci.yml)
+[![CI](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/tests.yml)
 
 > Measure performance in Cypress tests, keep a baseline in git, and catch regressions in CI.
 
@@ -325,7 +325,7 @@ If you want to list this package on the official Cypress plugins page, this repo
 
 - clear purpose + setup docs in `README.md`
 - integration tests with Cypress in `cypress/e2e/perf.cy.js`
-- CI pipeline in `.github/workflows/ci.yml`
+- CI pipeline in `.github/workflows/tests.yml`
 - populated package metadata in `package.json` (`homepage`, `repository`, `bugs`, keywords)
 
 After publishing to npm, you can submit a PR to the Cypress docs repo and add an entry to `src/data/plugins.json`.
