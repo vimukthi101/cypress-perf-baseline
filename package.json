@@ -1,0 +1,65 @@
+{
+  "name": "cypress-perf-baseline",
+  "version": "0.1.0",
+  "description": "Cypress plugin that collects performance metrics, stores baselines, diffs across runs and fails CI on regression",
+  "author": "Vimukthi Saranga <vimukthisaranga1@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.js",
+  "types": "index.d.ts",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "cypress",
+    "cypress-plugin",
+    "performance",
+    "performance-testing",
+    "performance-budget",
+    "baseline",
+    "regression",
+    "web-vitals",
+    "core-web-vitals",
+    "lcp",
+    "fcp",
+    "cls",
+    "ttfb",
+    "metrics",
+    "benchmark",
+    "ci",
+    "e2e"
+  ],
+  "files": [
+    "src/",
+    "scripts/",
+    "index.d.ts",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "cypress": ">=12.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "http-server": "14.1.1"
+  },
+  "scripts": {
+    "test": "node test/run.js",
+    "serve:example": "http-server example -p 3333 --silent",
+    "cy:integration": "cypress run --browser chrome --headless --spec cypress/e2e/perf.cy.js",
+    "integration:record": "node scripts/run-integration.js record",
+    "integration:compare": "node scripts/run-integration.js compare",
+    "test:integration:record": "npm run integration:record",
+    "test:integration:compare": "npm run integration:compare",
+    "test:integration": "npm run test:integration:record && npm run test:integration:compare",
+    "inline-chartjs": "node scripts/inline-chartjs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vimukthi101/cypress-perf-baseline"
+  },
+  "bugs": {
+    "url": "https://github.com/vimukthi101/cypress-perf-baseline/issues"
+  },
+  "homepage": "https://github.com/vimukthi101/cypress-perf-baseline#readme"
+}

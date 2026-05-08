@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cypress-perf-baseline — example page</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    main {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      padding: 2.5rem 3rem;
+      max-width: 560px;
+      width: 100%;
+    }
+    h1 { font-size: 1.6rem; margin-bottom: .75rem; color: #0d6efd; }
+    p  { line-height: 1.6; color: #555; margin-bottom: 1rem; }
+    ul { padding-left: 1.4rem; color: #555; line-height: 2; }
+    .badge {
+      display: inline-block;
+      background: #e8f4fd;
+      color: #0d6efd;
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      margin-top: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 data-cy="heading">cypress-perf-baseline</h1>
+    <p>
+      This page is only used for the plugin's own integration tests.
+      It represents a minimal, fast-loading page so that performance
+      metrics are stable and consistent in CI.
+    </p>
+    <ul data-cy="feature-list">
+      <li>Records LCP, FCP, CLS, TTFB and 14 other metrics</li>
+      <li>Stores branch-aware JSON baselines</li>
+      <li>Fails CI when metrics regress beyond configured thresholds</li>
+      <li>Generates a self-contained HTML report with charts</li>
+    </ul>
+    <span class="badge" data-cy="status">Integration test target ✓</span>
+  </main>
+</body>
+</html>
+

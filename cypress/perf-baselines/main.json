@@ -1,0 +1,30 @@
+{
+  "homepage": {
+    "metrics": {
+      "LCP": 1100,
+      "TTFB": 130
+    },
+    "recordedAt": "2026-05-06T12:39:57.161Z",
+    "branch": "main",
+    "sampleCount": 3,
+    "url": "http://localhost/"
+  },
+  "page-a": {
+    "metrics": {
+      "LCP": 800
+    },
+    "recordedAt": "2026-05-06T12:39:57.164Z",
+    "branch": "main",
+    "sampleCount": 3,
+    "url": "http://localhost/a"
+  },
+  "page-b": {
+    "metrics": {
+      "LCP": 950
+    },
+    "recordedAt": "2026-05-06T12:39:57.165Z",
+    "branch": "main",
+    "sampleCount": 3,
+    "url": "http://localhost/b"
+  }
+}

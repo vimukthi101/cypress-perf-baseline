@@ -1,0 +1,11 @@
+{
+  "homepage": {
+    "metrics": {
+      "LCP": 900
+    },
+    "recordedAt": "2026-05-06T12:39:57.162Z",
+    "branch": "feat/my special branch!!",
+    "sampleCount": 3,
+    "url": "http://localhost/"
+  }
+}
