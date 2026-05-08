@@ -60,8 +60,27 @@ jobs:
 
       - name: Upload perf report
         if: always()
-        uses: actions/upload-artifact@v7
+        id: upload_perf_report
+        uses: actions/upload-artifact@v4
         with:
           name: perf-report
           path: cypress/integration-reports/perf-report.html
           if-no-files-found: ignore
+
+      - name: Write job summary
+        if: always()
+        run: |
+          echo "## 📊 Performance Report" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "${{ steps.upload_perf_report.outputs.artifact-url }}" ]; then
+            echo "✅ **[Open perf-report.html](${{ steps.upload_perf_report.outputs.artifact-url }})**" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "⚠️ No report artifact was generated for this run." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Field | Value |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-------|-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Branch | \`${{ github.ref_name }}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Commit | \`${{ github.sha }}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Run | [#${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) |" >> "$GITHUB_STEP_SUMMARY"
+
