@@ -41,7 +41,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   - `cypress/e2e/perf.cy.js` coverage for `cy.perfSnapshot()` and `cy.perfAssert()`
   - `cypress/support/e2e.js` local command registration
   - `example/index.html` deterministic static page used by integration tests
-- GitHub Actions CI workflow in `.github/workflows/ci.yml`:
+- GitHub Actions CI workflow in `.github/workflows/tests.yml`:
    - unit tests on Node 20/22/24
      - Cypress integration run in Chrome that records then compares against a generated baseline
 - `serve:example` npm script for quickly running local integration tests

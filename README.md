@@ -312,7 +312,7 @@ $ npm test
 
 ## CI workflow
 
-This repository includes `.github/workflows/ci.yml` with two jobs:
+This repository includes `.github/workflows/tests.yml` with two jobs:
 
 - `unit-tests` — runs `npm test` on Node 20/22/24
 - `integration-tests` — serves `example/index.html`, runs Cypress in Chrome in `record`, then `compare` mode
