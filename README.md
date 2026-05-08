@@ -193,7 +193,7 @@ Example output (all metrics pass — no regressions):
 
   [cypress-perf-baseline] Run complete (21.8s)
   Snapshots: 3  |  Regressions: 0
-  Report → cypress/integration-reports/perf-report.html
+  Report → cypress/perf-reports/perf-report.html
   All metrics within thresholds — no regressions.
 ```
 
