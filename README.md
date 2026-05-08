@@ -1,6 +1,8 @@
 # cypress-perf-baseline
 
 [![CI](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/vimukthi101/cypress-perf-baseline/actions/workflows/tests.yml)
+[![npm](https://img.shields.io/npm/v/cypress-perf-baseline)](https://www.npmjs.com/package/cypress-perf-baseline)
+[![npm downloads](https://img.shields.io/npm/dm/cypress-perf-baseline)](https://www.npmjs.com/package/cypress-perf-baseline)
 
 > Measure performance in Cypress tests, keep a baseline in git, and catch regressions in CI.
 
@@ -126,7 +128,7 @@ Writes `cypress/perf-baselines/main.json`. **Commit this file.**
 ## Compare on every run (default)
 
 ```bash
-npm run test:integration:compare
+npx cypress run --spec "cypress/e2e/perf/**"
 ```
 
 Example output (all metrics pass — no regressions):

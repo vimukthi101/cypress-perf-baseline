@@ -61,5 +61,8 @@
   "bugs": {
     "url": "https://github.com/vimukthi101/cypress-perf-baseline/issues"
   },
-  "homepage": "https://github.com/vimukthi101/cypress-perf-baseline#readme"
+  "homepage": "https://github.com/vimukthi101/cypress-perf-baseline#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
