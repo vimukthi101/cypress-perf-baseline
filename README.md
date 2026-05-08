@@ -118,7 +118,12 @@ describe('site performance', () => {
 Run this once after your perf work to lock in the numbers:
 
 ```bash
+# macOS / Linux / CI
 PERF_MODE=record npx cypress run --spec "cypress/e2e/perf/**"
+```
+```powershell
+# Windows PowerShell
+$env:PERF_MODE="record"; npx cypress run --spec "cypress/e2e/perf/**"
 ```
 
 Writes `cypress/perf-baselines/main.json`. **Commit this file.**
@@ -127,9 +132,18 @@ Writes `cypress/perf-baselines/main.json`. **Commit this file.**
 
 ## Compare on every run (default)
 
+`compare` is the default mode — no env var needed. Just run your Cypress tests normally:
+
 ```bash
+# macOS / Linux / CI
 npx cypress run --spec "cypress/e2e/perf/**"
 ```
+```powershell
+# Windows PowerShell
+npx cypress run --spec "cypress/e2e/perf/**"
+```
+
+> Replace `cypress/e2e/perf/**` with the path to your own perf test files.
 
 Example output (all metrics pass — no regressions):
 
