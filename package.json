@@ -1,6 +1,6 @@
 {
   "name": "cypress-perf-baseline",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Cypress plugin that collects performance metrics, stores baselines, diffs across runs and fails CI on regression",
   "author": "Vimukthi Saranga <vimukthisaranga1@gmail.com>",
   "license": "MIT",

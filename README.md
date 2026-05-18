@@ -30,9 +30,11 @@ This package includes the `cypress-plugin` keyword for Cypress plugin discovery.
 
 ---
 
-## Setup (2 files)
+## Setup
 
-### `cypress.config.js`
+### JavaScript projects
+
+`cypress.config.js`
 
 ```js
 const { defineConfig } = require('cypress')
@@ -67,11 +69,67 @@ module.exports = defineConfig({
 })
 ```
 
-### `cypress/support/e2e.js`
+`cypress/support/e2e.js`
 
 ```js
 require('cypress-perf-baseline/src/commands')
 ```
+
+### TypeScript projects
+
+`cypress.config.ts`
+
+```ts
+import { defineConfig } from 'cypress'
+import { perfTasks } from 'cypress-perf-baseline'
+
+export default defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      perfTasks(on, config)
+      return config
+    },
+
+    env: {
+      perfBaseline: {
+        samples: 3,
+        settleTime: 1500,
+        networkIdleTime: 500,
+        threshold: 20,
+        failOnRegression: true,
+        baselineDir: 'cypress/perf-baselines',
+        reportDir: 'cypress/perf-reports',
+      }
+    }
+  }
+})
+```
+
+`cypress/support/e2e.ts`
+
+```ts
+import 'cypress-perf-baseline/src/commands'
+```
+
+`cypress/support/e2e.d.ts`
+
+```ts
+/// <reference types="cypress" />
+/// <reference types="cypress-perf-baseline" />
+```
+
+`cypress/tsconfig.json` (or your Cypress tsconfig section)
+
+```json
+{
+  "compilerOptions": {
+    "types": ["cypress", "cypress-perf-baseline"]
+  },
+  "include": ["**/*.ts", "**/*.d.ts"]
+}
+```
+
+This ensures TypeScript recognizes `cy.perfSnapshot()` and `cy.perfAssert()` without custom local type augmentation.
 
 ---
 
@@ -194,6 +252,7 @@ Example output (all metrics pass — no regressions):
   [cypress-perf-baseline] Run complete (21.8s)
   Snapshots: 3  |  Regressions: 0
   Report → cypress/perf-reports/perf-report.html
+  Open the report in a browser to view detailed results
   All metrics within thresholds — no regressions.
 ```
 
@@ -234,6 +293,7 @@ cy.perfAssert('checkout', {
 | `TTFB` | Time to First Byte |
 | `domInteractive` | DOM ready |
 | `domComplete` | Full page load |
+| `loadEvent` | Load event end |
 | `dnsLookup` | DNS resolution time |
 | `tcpConnect` | TCP connection time |
 | `tlsHandshake` | TLS negotiation time |

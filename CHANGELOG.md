@@ -7,7 +7,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ---
 
-## [0.1.0]  - Initial public release with core performance snapshot and assertion features, baseline management, and reporting capabilities.
+## [1.0.0] - 2026-05-18
+
+First stable release. No breaking changes from 0.1.0 — promotes the plugin to a stable public API.
+
+### Fixed
+
+- README: Updated to add steps for installation and usage in TypeScript projects
+- CHANGELOG: metrics count corrected from 18 to 19
+
+---
+
+## [0.1.0] - Initial public release with core performance snapshot and assertion features, baseline management, and reporting capabilities.
 
 ### Added
 
@@ -16,7 +27,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - `cy.perfAssert(name, expectations)` for fixed performance budgets independent of baseline comparisons
 - `perfTasks(on, config)` for task registration (`perfBaseline:snapshot`, `perfBaseline:getLastSnapshot`) and `after:run` report generation
 
-**Metrics collected (18 total)**
+**Metrics collected (19 total)**
 - Core Web Vitals: LCP, FCP, CLS
 - Navigation Timing: TTFB, domInteractive, domComplete, loadEvent
 - Connection: dnsLookup, tcpConnect, tlsHandshake
